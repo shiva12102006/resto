@@ -161,26 +161,31 @@
 <body>
 
  <header class="navbar">
- <div class="logo">
-  <a href="/">
-    <img src="/img/logo.svg" class="logo-img" alt="Logo">
-  </a>
-</div>
+  <div class="logo">
+    <a href="/">
+      <img src="/img/logo.svg" class="logo-img" alt="Logo">
+    </a>
+  </div>
 
-  <nav class="nav-links">
-     <div class="dropdown">
-    <a href="#" id="restaurantBtn">Restaurants</a>
+  <!-- Hamburger -->
+  <div class="menu-toggle" id="menuToggle">
+    ☰
+  </div>
 
-    <!-- DROPDOWN MENU -->
-    <div class="dropdown-menu" id="dropdownMenu">
-      <div class="dropdown-content">
-        <a href="#">London</a>
-        <a href="#">Dubai</a>
-        <a href="#">Riyadh</a>
-        <a href="#">Ithra</a>
+  <nav class="nav-links" id="navLinks">
+    <div class="dropdown">
+      <a href="/resto.html" id="restaurantBtn">Restaurants</a>
+
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <a href="#">London</a>
+          <a href="#">Dubai</a>
+          <a href="#">Riyadh</a>
+          <a href="#">Ithra</a>
+        </div>
       </div>
     </div>
-  </div>
+
     <a href="/menu.html">Menu</a>
     <a href="/group.html">Group dining</a>
     <a href="/about.html">About us</a>
@@ -370,7 +375,7 @@ tabs.forEach(tab => {
 
 
 
-    
+  <script src="script.js"></script>  
 </body>
 </html>
 
