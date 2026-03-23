@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group and slicing</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+/* Background */
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('/img/group/group.avif') no-repeat center/cover;
+  background-attachment: fixed;
+  z-index: -1;
+
+}
+
+.hero-botom{
+   position: absolute;
+  bottom: 60px;
+  left: 40px;
+  max-width: 600px;
+  font-size: 70px;
+  opacity: 0.8; 
+  
+  
+  color: white;
+ 
+}
+
+ .info-bar {
+    background: #20242f;
+    color: #dce3ea;
+    padding: 25px 40px;
+  }
+
+  .info-bar p {
+    max-width: 100%;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  .section {
+  padding: 40px;
+  background: #252a36;
+}
+
+/* Title */
+.section h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 18px;
+  cursor: pointer;
+  color: #9aa5b1;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #111827;
+  color: white;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+   background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),   /* bottom dark */
+    rgba(0, 0, 0, 0.3),   /* middle */
+    rgba(0, 0, 0, 0.2)    /* top light */
+  );
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Country badge */
+.badge {
+  border: 1px solid white;
+  padding: 6px 10px;
+  font-size: 12px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.title {
+  font-size: 20px;
+}
+
+/* Hide */
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+ <header class="navbar">
+ <div class="logo">
+  <a href="/">
+    <img src="/img/logo.svg" class="logo-img" alt="Logo">
+  </a>
+</div>
+
+  <nav class="nav-links">
+     <div class="dropdown">
+    <a href="#" id="restaurantBtn">Restaurants</a>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <div class="dropdown-content">
+        <a href="#">London</a>
+        <a href="#">Dubai</a>
+        <a href="#">Riyadh</a>
+        <a href="#">Ithra</a>
+      </div>
+    </div>
+  </div>
+    <a href="/menu.html">Menu</a>
+    <a href="/group.html">Group dining</a>
+    <a href="/about.html">About us</a>
+    <a href="/carear.html">Careers</a>
+  </nav>
+
+  <div class="nav-right">
+    🌐
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <!-- Background Image -->
+  <div class="hero-bg"></div>
+
+  <!-- Center Logo -->
+  
+
+  <!-- Right Text -->
+  <div class="hero-botom ">
+    <p>
+     Group dining
+    </p>
+  </div>
+
+</section>
+
+<section class="info-bar">
+  <p>
+    Discover our dynamic and versatile spaces, perfect for hosting a wide range of events. 
+    From elegant seated dinners and chic cocktail parties to stunning product displays 
+    and exclusive press dinners, we have the perfect setting for every occasion.
+  </p>
+</section>
+
+
+<!-- resto section -->
+ <section class="section">
+  <h2>OUR RESTAURANTS</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-filter="all">ALL</div>
+    <div class="tab" data-filter="uk">UNITED KINGDOM</div>
+    <div class="tab" data-filter="saudi">SAUDI ARABIA</div>
+    <div class="tab" data-filter="turkey">TURKEY</div>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid">
+
+    <!-- Card 1 -->
+    <div class="card" data-category="uk">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+      <div class="overlay">
+        <div class="badge">UNITED KINGDOM</div>
+        <div class="title">ROKA Charlotte Street, London</div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card" data-category="uk">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+      <div class="overlay">
+        <div class="badge">UNITED KINGDOM</div>
+        <div class="title">Shochu Lounge, London</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card" data-category="uk">
+      <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c">
+      <div class="overlay">
+        <div class="badge">UNITED KINGDOM</div>
+        <div class="title">ROKA Canary Wharf, London</div>
+      </div>
+    </div>
+
+    <!-- Extra Example -->
+    <div class="card" data-category="saudi">
+      <img src="https://images.unsplash.com/photo-1541542684-4a3d595f8e22">
+      <div class="overlay">
+        <div class="badge">SAUDI ARABIA</div>
+        <div class="title">ROKA Riyadh</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+
+  <!-- TOP TEXT / SLIDER -->
+  <div class="footer-top">
+    <div class="arrows">‹ ›</div>
+
+    <h2>
+      We love ROKA so much that one visit just wasn’t enough
+    </h2>
+
+    <p class="author">British GQ</p>
+
+    <div class="dots">
+      <span></span>
+      <span class="active"></span>
+    </div>
+  </div>
+
+  <!-- FOOTER CONTENT -->
+  <div class="footer-content">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Group dining</a>
+
+      <div class="social">
+        <span>in</span>
+        <span>▶</span>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-col">
+      <p class="heading">The Azumi group</p>
+      <a href="#">Azumi</a>
+      <a href="#">Zuma</a>
+      <a href="#">INKO NITO</a>
+      <a href="#">Oblix</a>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="footer-col form">
+      <h3>Stay in touch</h3>
+
+      <div class="form-row">
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Surname">
+      </div>
+
+      <input type="email" placeholder="E-mail *">
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+
+
+const tabs = document.querySelectorAll(".tab");
+const cards = document.querySelectorAll(".card");
+
+// Add click event
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    // Remove active class
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    const filter = tab.getAttribute("data-filter");
+
+    cards.forEach(card => {
+      const category = card.getAttribute("data-category");
+
+      if (filter === "all" || filter === category) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+  });
+});
+</script>
+
+</script>
+
+
+
+    
+</body>
+</html>
+

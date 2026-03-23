@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dj night</title>
+    <link rel="stylesheet" href="/../style.css">
+
+    <style>
+
+/* NAVBAR */
+
+
+.dj-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dj-change-btn {
+  border: 1px solid orange;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.dj-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.dj-menu a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dj-menu a:hover {
+  color: orange;
+}
+
+.dj-book {
+  background: #d65a1f;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* HERO */
+.dj-hero {
+  position: relative;
+  height: 600px;
+  background: url('https://images.unsplash.com/photo-1553621042-f6e147245754') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  background-attachment: fixed;
+}
+
+/* Overlay */
+.dj-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+}
+
+/* Text */
+.dj-content {
+  position: relative;
+  color: white;
+  padding: 40px;
+}
+
+.dj-content h1 {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .dj-content h1 {
+    font-size: 32px;
+  }
+
+  .dj-navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* cards */
+body {
+  margin: 0;
+  background: #1f2933;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Section */
+.dj-whats {
+  padding: 50px 40px;
+}
+
+/* Title */
+.dj-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: #cbd5e1;
+}
+
+/* Grid */
+.dj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.dj-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Text */
+.dj-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dj-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.dj-card span {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #9aa5b1;
+}
+
+/* Button */
+.dj-card button {
+  background: #d65a1f;
+  border: none;
+  padding: 10px 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dj-card button:hover {
+  background: #b94a18;
+}
+
+/* Hover effect */
+.dj-card img {
+  transition: 0.4s;
+}
+
+.dj-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width: 900px){
+  .dj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dj-learnmore{
+    height: 250px;
+    width: 100%;
+    background: #b94a18;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+
+}
+
+.dj-learnmore button{
+ background:black;
+  border: none;
+  height: 70px;
+  width: 200px;
+  padding: 10px 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+
+
+}
+.dj-learnmore p{
+
+    font-size: 20px;
+
+
+
+
+}
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+ <header class="navbar">
+ <div class="logo">
+  <a href="/">
+    <img src="/img/logo.svg" class="logo-img" alt="Logo">
+  </a>
+</div>
+
+  <nav class="nav-links">
+     <div class="dropdown">
+    <a href="#" id="restaurantBtn">Restaurants</a>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <div class="dropdown-content">
+        <a href="#">London</a>
+        <a href="#">Dubai</a>
+        <a href="#">Riyadh</a>
+        <a href="#">Ithra</a>
+      </div>
+    </div>
+  </div>
+    <a href="/menu.html">Menu</a>
+    <a href="/group.html">Group dining</a>
+    <a href="/about.html">About us</a>
+    <a href="/carear.html">Careers</a>
+  </nav>
+
+  <div class="nav-right">
+    🌐
+  </div>
+</header>
+
+<section class="dj-hero">
+    <div class="dj-content">
+        <h1>Teishoku Lunch & Dinner Menus</h1>
+    </div>
+</section>
+
+<section>
+    <div class="dj-navbar">
+  
+  <div class="dj-left">
+    <div>ROKA Business Bay, Dubai</div>
+    <div class="dj-change-btn">CHANGE RESTAURANT</div>
+  </div>
+
+  <div class="dj-menu">
+    <a href="#">Overview</a>
+    <a href="#">Menu</a>
+    <a href="#" style="color:orange;">What's on</a>
+    <a href="#">Group dining</a>
+    <a href="#">Contact us</a>
+    <div class="dj-book">Book →</div>
+  </div>
+
+</div>
+
+</section>
+
+
+<section class="dj-whats">
+  <h2 class="dj-title">WHAT'S ON</h2>
+
+  <div class="dj-grid">
+
+    <!-- Card 1 -->
+    <div class="dj-card">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+      <h3>Mother’s Day Celebration</h3>
+      <p>
+        Join us to celebrate Mother’s Day and enjoy a complimentary dessert in a vibrant setting
+      </p>
+      <span>When: 21st March 2026</span>
+      <button>See details</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="dj-card">
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+      <h3>Teishoku Lunch & Dinner Menus</h3>
+      <p>
+        Discover our Teishoku Set Menus now available all day, everyday!
+      </p>
+      <span>When: Everyday - all day</span>
+      <button>See details</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="dj-card">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+      <h3>Donburi Business Lunch</h3>
+      <p>
+        Escape the office and join us for lunch at ROKA. Discover our Donburi Business Lunch.
+      </p>
+      <span>When: Sunday – Friday: 12pm to 3pm</span>
+      <button>See details</button>
+    </div>
+    <div class="dj-card">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+      <h3>Donburi Business Lunch</h3>
+      <p>
+        Escape the office and join us for lunch at ROKA. Discover our Donburi Business Lunch.
+      </p>
+      <span>When: Sunday – Friday: 12pm to 3pm</span>
+      <button>See details</button>
+    </div>
+    <div class="dj-card">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+      <h3>Donburi Business Lunch</h3>
+      <p>
+        Escape the office and join us for lunch at ROKA. Discover our Donburi Business Lunch.
+      </p>
+      <span>When: Sunday – Friday: 12pm to 3pm</span>
+      <button>See details</button>
+    </div>
+    <div class="dj-card">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+      <h3>Donburi Business Lunch</h3>
+      <p>
+        Escape the office and join us for lunch at ROKA. Discover our Donburi Business Lunch.
+      </p>
+      <span>When: Sunday – Friday: 12pm to 3pm</span>
+      <button>See details</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="dj-learnmore">
+    <p>Give the gift of ROKA</p>
+    <p>A gift voucher to experience the vibrant culinary scene at ROKA says how thoughtful you are.</p>
+    <button>
+        Learn more
+    </button>
+
+
+
+     
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+  <!-- TOP TEXT / SLIDER -->
+  <div class="footer-top">
+    <div class="arrows">‹ ›</div>
+
+    <h2>
+      We love ROKA so much that one visit just wasn’t enough
+    </h2>
+
+    <p class="author">British GQ</p>
+
+    <div class="dots">
+      <span></span>
+      <span class="active"></span>
+    </div>
+  </div>
+
+  <!-- FOOTER CONTENT -->
+  <div class="footer-content">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Group dining</a>
+
+      <div class="social">
+        <span>in</span>
+        <span>▶</span>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-col">
+      <p class="heading">The Azumi group</p>
+      <a href="#">Azumi</a>
+      <a href="#">Zuma</a>
+      <a href="#">INKO NITO</a>
+      <a href="#">Oblix</a>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="footer-col form">
+      <h3>Stay in touch</h3>
+
+      <div class="form-row">
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Surname">
+      </div>
+
+      <input type="email" placeholder="E-mail *">
+
+    </div>
+
+  </div>
+
+</footer>
+
+    
+</body>
+</html>

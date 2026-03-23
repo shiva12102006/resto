@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+/* Background */
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('/img/mount.jpg') no-repeat center/cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+/* Center Title */
+.hero-title {
+    color: white;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  letter-spacing: 20px;
+  font-weight: 300;
+}
+
+/* Left Text */
+.hero-left {
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+  max-width: 300px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Right Text */
+.hero-right {
+  position: absolute;
+  bottom: 80px;
+  right: 60px;
+  max-width: 300px;
+  font-size: 14px;
+  text-align: right;
+  opacity: 0.8;
+  
+}
+
+/* Scroll Indicator */
+.scroll {
+  margin-top: 20px;
+}
+
+.scroll span {
+  color: orange;
+  font-size: 12px;
+}
+
+.line {
+  width: 2px;
+  height: 40px;
+  background: orange;
+  margin-top: 5px;
+}
+
+.about-section {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to right, #0b0f14, #1a2230);
+  color: white;
+}
+
+/* LEFT IMAGE */
+.about-image {
+  width: 50%;
+  position: relative;
+}
+
+.about-image img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  margin: 30px;
+}
+
+/* SCROLL INDICATOR */
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+.scroll span {
+  color: orange;
+  font-size: 12px;
+}
+
+.scroll .line {
+  width: 2px;
+  height: 40px;
+  background: orange;
+  margin-top: 5px;
+}
+
+/* RIGHT CONTENT */
+.about-content {
+  width: 50%;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content h2 {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+
+.journey {
+  padding: 40px;
+  background: #20242f;
+}
+
+.journey h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+/* Slide */
+.swiper-slide {
+  width: 480px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* Overlay shadow */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+/* Hover */
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Info */
+.info {
+  margin-top: 15px;
+}
+
+.info span {
+  font-size: 14px;
+  color: #9aa5b1;
+}
+
+.info h3 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+/* Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">
+  <a href="/">
+    <img src="/img/logo.svg" class="logo-img" alt="Logo">
+  </a>
+</div>
+
+  <nav class="nav-links">
+    <div class="dropdown">
+    <a href="#" id="restaurantBtn">Restaurants</a>
+
+    <!-- DROPDOWN MENU -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <div class="dropdown-content">
+        <a href="#">London</a>
+        <a href="#">Dubai</a>
+        <a href="#">Riyadh</a>
+        <a href="#">Ithra</a>
+      </div>
+    </div>
+  </div>
+    <a href="/menu.html">Menu</a>
+    <a href="/group.html">Group dining</a>
+    <a href="/about.html">About us</a>
+    <a href="/carear.html">Careers</a>
+  </nav>
+
+  <div class="nav-right">
+    🌐
+  </div>
+</header>
+
+
+
+<section class="hero">
+
+  <!-- Background Image -->
+  <div class="hero-bg"></div>
+
+  <!-- Center Logo -->
+  <h1 class="hero-title">ROKA</h1>
+
+  <!-- Left Text -->
+  <div class="hero-left">
+    <p>
+      A meeting place where food and drinks <br>
+      are served around the robata (RO)
+    </p>
+    <div class="scroll">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <!-- Right Text -->
+  <div class="hero-right">
+    <p>
+      Heat, warmth and an all-embracing <br>
+      energy surround (KA)
+    </p>
+  </div>
+
+</section>
+
+<section class="about-section">
+
+  <!-- Left Image -->
+  <div class="about-image">
+    <img src="/img/about2.webp" alt="grill">
+    
+    
+  </div>
+
+  <!-- Right Content -->
+  <div class="about-content">
+    <h2>Sense the buzz all around you</h2>
+
+    <p>
+      The robata grill, always central in every ROKA, fired up and ready to go,
+      honours the centuries old cooking traditions of the fishermen from the
+      Northern coastal waters off Japan. With a deft hand, they would grill fish
+      on their boats over hot charcoal and share the bounty with one another
+      using their oars. Our dishes, too, are designed to be shared at the table.
+    </p>
+
+    <p>
+      Feel the heat of the kitchen. Sense the buzz all around you. The energy is
+      infectious. The evening is alive. Thank you for joining us.
+    </p>
+  </div>
+
+</section>
+
+<section class="journey">
+  <h2>OUR JOURNEY</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+        </div>
+        <div class="info">
+          <span>2004</span>
+          <h3>ROKA Charlotte Street, London</h3>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+        </div>
+        <div class="info">
+          <span>2009</span>
+          <h3>ROKA Canary Wharf, London</h3>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c">
+        </div>
+        <div class="info">
+          <span>2014</span>
+          <h3>ROKA Mayfair, London</h3>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c">
+        </div>
+        <div class="info">
+          <span>2014</span>
+          <h3>ROKA Mayfair, London</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+  <!-- TOP TEXT / SLIDER -->
+  <div class="footer-top">
+    <div class="arrows">‹ ›</div>
+
+    <h2>
+      We love ROKA so much that one visit just wasn’t enough
+    </h2>
+
+    <p class="author">British GQ</p>
+
+    <div class="dots">
+      <span></span>
+      <span class="active"></span>
+    </div>
+  </div>
+
+  <!-- FOOTER CONTENT -->
+  <div class="footer-content">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Group dining</a>
+
+      <div class="social">
+        <span>in</span>
+        <span>▶</span>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-col">
+      <p class="heading">The Azumi group</p>
+      <a href="#">Azumi</a>
+      <a href="#">Zuma</a>
+      <a href="#">INKO NITO</a>
+      <a href="#">Oblix</a>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="footer-col form">
+      <h3>Stay in touch</h3>
+
+      <div class="form-row">
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Surname">
+      </div>
+
+      <input type="email" placeholder="E-mail *">
+
+    </div>
+
+  </div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  loop: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+</script>
+
+    
+</body>
+</html>
